@@ -1,0 +1,57 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__burger {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #222;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+
+    a {
+      padding: 1rem;
+      color: #eee;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+
+      &:hover {
+        background: #333;
+      }
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+}

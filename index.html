@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oce'art Studio</title>
+    <link rel="stylesheet" href="./style/main.css" />
+    <script
+      src="https://kit.fontawesome.com/471665c4dc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar__title">Oce'art</div>
+      <button class="navbar__burger" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navbar__menu" id="navMenu">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </header>
+
+    <section id="hero" class="hero">
+      <div class="hero__overlay">
+        <div class="hero__socials">
+          <a href="https://tiktok.com" target="_blank"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+        <div class="hero__content">
+          <h1>Oce'art Studio</h1>
+          <p>Espace artistique de création au Havre</p>
+          <a href="#about" class="btn">Me découvrir</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>À propos</h2>
+      <p>
+        Je suis une artiste basée au Havre, spécialisée dans les portraits
+        réalistes et les tatouages personnalisés. Mon processus créatif est basé
+        sur l'écoute, l'esquisse manuelle et la recherche d'émotions dans chaque
+        œuvre.
+      </p>
+      <button class="btn" id="contactBtn">Me contacter</button>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2>Galerie</h2>
+
+      <div class="gallery__filters">
+        <label
+          ><input type="checkbox" id="filterPortrait" checked /> Portrait</label
+        >
+        <label
+          ><input type="checkbox" id="filterTattoo" checked /> Tattoo</label
+        >
+      </div>
+
+      <div class="gallery__grid">
+        <div class="gallery__item portrait" data-type="portrait">
+          <img src="./assets/images/portrait/1.png" alt="" />
+        </div>
+        <div class="gallery__item portrait" data-type="portrait">
+          <img src="./assets/images/portrait/2.png" alt="" />
+        </div>
+        <div class="gallery__item portrait" data-type="portrait">
+          <img src="./assets/images/portrait/3.png" alt="" />
+        </div>
+        <div class="gallery__item portrait" data-type="portrait">
+          <img src="./assets/images/portrait/4.png" alt="" />
+        </div>
+        <div class="gallery__item portrait" data-type="portrait">
+          <img src="./assets/images/portrait/5.png" alt="" />
+        </div>
+        <div class="gallery__item tattoo" data-type="tattoo">
+          <img src="./assets/images/tattoo/6.png" alt="" />
+        </div>
+        <div class="gallery__item tattoo" data-type="tattoo">
+          <img src="./assets/images/tattoo/7.png" alt="" />
+        </div>
+        <div class="gallery__item tattoo" data-type="tattoo">
+          <img src="./assets/images/tattoo/8.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; Oce'art Studio</p>
+    </footer>
+
+    <div class="modal" id="contactModal">
+      <div class="modal__content">
+        <span class="modal__close" id="closeModal">&times;</span>
+        <h3>Contactez-moi</h3>
+        <form>
+          <input type="text" placeholder="Nom" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Votre message" required></textarea>
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
