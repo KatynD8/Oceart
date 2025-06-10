@@ -1,5 +1,5 @@
 .hero {
-  height: 60vh;
+  height: 75vh;
   background: url("../assets/hero-banner/background.jpg") center/cover no-repeat;
   position: relative;
 
@@ -51,5 +51,6 @@
   p {
     margin-top: 0.5rem;
     font-size: 1rem;
+    font-family: "Roboto Condensed", sans-serif;
   }
 }

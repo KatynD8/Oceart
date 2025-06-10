@@ -54,3 +54,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateGalleryVisibility(); // Apply filter on load
 });
+
+// Sélection des éléments
+const mainImage = document.getElementById("mainImage");
+const thumbnails = Array.from(
+  document.querySelectorAll(".gallery__thumbs img")
+);
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+// Met à jour la mainImage sur clic miniature (déjà en place)
+thumbnails.forEach((thumb) => {
+  thumb.addEventListener("click", () => {
+    mainImage.src = thumb.src;
+  });
+});
+
+// Fonction utilitaire pour récupérer les miniatures visibles
+function getVisibleThumbnails() {
+  return thumbnails.filter((thumb) => thumb.style.display !== "none");
+}
+
+// Navigation précédente/suivante
+function navigateImage(direction) {
+  const visible = getVisibleThumbnails();
+  if (!visible.length) return;
+
+  // Trouver l'indice de l'image actuelle
+  const currentIndex = visible.findIndex(
+    (thumb) => thumb.src === mainImage.src
+  );
+  let nextIndex;
+
+  if (direction === "prev") {
+    nextIndex = currentIndex <= 0 ? visible.length - 1 : currentIndex - 1;
+  } else {
+    nextIndex = currentIndex === visible.length - 1 ? 0 : currentIndex + 1;
+  }
+
+  mainImage.src = visible[nextIndex].src;
+}
+
+// Événements sur les flèches
+prevBtn.addEventListener("click", () => navigateImage("prev"));
+nextBtn.addEventListener("click", () => navigateImage("next"));
+
+// Votre code de filtres existant
+function updateThumbnailsVisibility() {
+  const showPortrait = filterPortrait?.checked;
+  const showTattoo = filterTattoo?.checked;
+
+  thumbnails.forEach((thumb) => {
+    const type = thumb.dataset.type;
+    thumb.style.display =
+      (type === "portrait" && showPortrait) || (type === "tattoo" && showTattoo)
+        ? "inline-block"
+        : "none";
+  });
+
+  // Met à jour l'image principale avec la première miniature visible
+  const firstVisible = getVisibleThumbnails()[0];
+  if (firstVisible) {
+    mainImage.src = firstVisible.src;
+  }
+}
+
+filterPortrait.addEventListener("change", updateThumbnailsVisibility);
+filterTattoo.addEventListener("change", updateThumbnailsVisibility);
+updateThumbnailsVisibility();

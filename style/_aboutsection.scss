@@ -1,15 +1,26 @@
-.about,
-.gallery {
+.about {
   padding: 2rem 1rem;
   background: #1a1a1a;
   color: #ddd;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  .btn {
+    width: 130px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 
   h2 {
+    font-family: "Savate", sans-serif;
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
 
   p {
     font-size: 1rem;
+    font-family: "Roboto Condensed", sans-serif;
   }
 }

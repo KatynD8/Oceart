@@ -9,6 +9,12 @@
       src="https://kit.fontawesome.com/471665c4dc.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="navbar">
@@ -64,31 +70,24 @@
         >
       </div>
 
-      <div class="gallery__grid">
-        <div class="gallery__item portrait" data-type="portrait">
-          <img src="./assets/images/portrait/1.png" alt="" />
-        </div>
-        <div class="gallery__item portrait" data-type="portrait">
-          <img src="./assets/images/portrait/2.png" alt="" />
-        </div>
-        <div class="gallery__item portrait" data-type="portrait">
-          <img src="./assets/images/portrait/3.png" alt="" />
-        </div>
-        <div class="gallery__item portrait" data-type="portrait">
-          <img src="./assets/images/portrait/4.png" alt="" />
-        </div>
-        <div class="gallery__item portrait" data-type="portrait">
-          <img src="./assets/images/portrait/5.png" alt="" />
-        </div>
-        <div class="gallery__item tattoo" data-type="tattoo">
-          <img src="./assets/images/tattoo/6.png" alt="" />
-        </div>
-        <div class="gallery__item tattoo" data-type="tattoo">
-          <img src="./assets/images/tattoo/7.png" alt="" />
-        </div>
-        <div class="gallery__item tattoo" data-type="tattoo">
-          <img src="./assets/images/tattoo/8.png" alt="" />
-        </div>
+      <div class="gallery__main">
+   <button class="nav-arrow nav-arrow--prev" id="prevBtn" aria-label="Image précédente">‹</button>
+    <img
+      id="mainImage"
+      src="./assets/images/portrait/1.png"
+      alt="Image principale"
+    />
+    <button class="nav-arrow nav-arrow--next" id="nextBtn" aria-label="Image suivante">›</button>
+
+      <div class="gallery__thumbs">
+        <img src="./assets/images/portrait/1.png" data-type="portrait" />
+        <img src="./assets/images/portrait/2.png" data-type="portrait" />
+        <img src="./assets/images/portrait/3.png" data-type="portrait" />
+        <img src="./assets/images/portrait/4.png" data-type="portrait" />
+        <img src="./assets/images/portrait/5.png" data-type="portrait" />
+        <img src="./assets/images/tattoo/6.png" data-type="tattoo" />
+        <img src="./assets/images/tattoo/7.png" data-type="tattoo" />
+        <img src="./assets/images/tattoo/8.png" data-type="tattoo" />
       </div>
     </section>
 
